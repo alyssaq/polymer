@@ -1,7 +1,7 @@
 Polymer Project
 ===
 
-http://alyssaq.github.io/polymer/
+https://alyssaq.github.io/polymer
 
 Update gh-pages:    
 
