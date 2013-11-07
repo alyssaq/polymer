@@ -229,10 +229,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        
         'compass',
-        
-        
         'connect:test',
         'mocha'
     ]);
@@ -249,7 +246,7 @@ module.exports = function (grunt) {
         'copy',
         'usemin'
     ]);
-
+    
     grunt.registerTask('default', [
         'jshint',
         'test',
