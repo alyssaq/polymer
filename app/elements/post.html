@@ -1,4 +1,4 @@
-<!-- <link rel="import" href="no.html"> -->
+<link rel="import" href="vendor/gravatar-image/gravatar.html">
 <polymer-element name="post-element"  attributes="post selected">
   <template>
     <style>
@@ -13,8 +13,8 @@
           </a>
         </h2>
 
-        <p>By {{post.gsx$author.$t}} {{post.gsx$publishedDate.$t}}</p>
-        <gravatar-element username="{{post.gsx$email.$t}}" size="100"></gravatar-element>
+        <p>By {{post.gsx$author.$t}} - {{post.gsx$email.$t}} {{post.gsx$publishedDate.$t}}</p>
+        <!-- <gravatar-image username="{{post.gsx$email.$t}}" size="100"></gravatar-image> -->
         <p>{{post.gsx$content.$t}}</p>
         <p>Published on: {{post.gsx$date.$t}}</p>
         <small>Keywords: {{post.gsx$keywords.$t}}</small>
