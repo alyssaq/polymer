@@ -247,6 +247,12 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
+    grunt.registerTask('prod', [
+        'build',
+        'connect:production:keepalive',
+        'open'
+    ]);
+
     grunt.registerTask('default', [
         'jshint',
         'test',
