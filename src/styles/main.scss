@@ -38,12 +38,6 @@ li {
   line-height: 1.4 ;
 }
 
-/* Header, <header>
-   header   - container
-   h1       - project name
-   h2       - project description
-*/
-
 header {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -319,3 +313,27 @@ a {
 .type-csharp .highlight .nn { color: #000000 }
 .type-csharp .highlight .s { color: #A31515 }
 .type-csharp .highlight .sc { color: #A31515 }
+
+/* Transition on page load */
+header, blog-element, post-element {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@-o-keyframes fadein { /* Opera */
+  from { opacity:0; }
+  to { opacity:1; }
+}
