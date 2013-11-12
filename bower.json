@@ -4,7 +4,9 @@
   "dependencies": {
     "sass-bootstrap": "~2.3.0",
     "modernizr": "~2.6.2",
-    "polymer": "latest"
+    "polymer": "latest",
+    "polymer-elements": "latest",
+    "polymer-ui-elements": "latest"
   },
   "devDependencies": {}
 }
