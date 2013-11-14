@@ -1,12 +1,14 @@
 Polymer Project
-===
+==
+Just playing with [polymer](http://www.polymer-project.org/)
 
+Demo
+==
 https://alyssaq.github.io/polymer
 
-Update gh-pages:    
+Build
+==
+Run the following script to build the source files (concate, lint, minify, copy, etc) to a new folder called "app" and publish to gh-pages:
 
-    > git subtree push --prefix app origin gh-pages
+    > ./scripts/publish.sh
 
-Delete remote branch:
-
-    > git push origin --delete <branchName>
