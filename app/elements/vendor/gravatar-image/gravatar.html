@@ -30,8 +30,9 @@
 
 	Polymer('gravatar-image', {
 		created: function() {
-			this.$.username.href = Gravatar.profileURL(this);
-			this.$.username_image.src = Gravatar.imageURL(this.username, this.size, this.hash);
+      alert(this.username);
+			// this.$.username.href = Gravatar.profileURL(this);
+			// this.$.username_image.src = Gravatar.imageURL(this.username, this.size, this.hash);
 		},
 		hash: '',
 		username: 'someemail@example.com',
