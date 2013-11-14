@@ -8,7 +8,7 @@ https://alyssaq.github.io/polymer
 
 Build
 ==
-Run the following script to build the source files (concate, lint, minify, copy, etc) to a new folder called "app" and publish to gh-pages:
+Run the following script to build the source files (concat, lint, minify, copy, etc) to a new folder called "app" and publish to gh-pages:
 
     > ./scripts/publish.sh
 
