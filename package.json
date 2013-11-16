@@ -1,7 +1,10 @@
 {
   "name": "polymer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {},
+  "author:" : {
+    "name": "Alyssa Quek"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.0",
@@ -22,9 +25,14 @@
     "grunt-open": "~0.2.0",
     "matchdep": "~0.1.2",
     "connect-livereload": "~0.2.0",
-    "time-grunt": "~0.1.0"
+    "time-grunt": "~0.1.0",
+    "grunt-github-pages": "0.0.3"
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alyssaq/polymer/"
   }
 }
