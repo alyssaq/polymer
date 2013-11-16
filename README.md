@@ -12,3 +12,13 @@ Run the following script to build the source files (concat, lint, minify, copy, 
 
     > ./scripts/publish.sh
 
+Run
+==
+Start a simple python HTTP server and view the blog
+
+    > cd app
+    > python -m SimpleHTTPServer 9999
+
+Open and view the blog at `localhost:9999`
+
+
