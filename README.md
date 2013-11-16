@@ -14,7 +14,14 @@ Run the following script to build the source files (concat, lint, minify, copy, 
 
 Run
 ==
-Start a simple python HTTP server and view the blog
+Start a simple HTTP server and view the blog
+
+#### Node (required http-server module): 
+
+    > npm install http-server -g
+    > http-server app -p 9999
+
+#### Python:
 
     > cd app
     > python -m SimpleHTTPServer 9999
