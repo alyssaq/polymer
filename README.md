@@ -9,15 +9,19 @@ https://alyssaq.github.io/polymer
 Usage
 ==
 To build the project, which creates the `app` folder:
+    
     > grunt build
     
 To build and stay connected with live-reload for development (files served from `src`):
+    
     > grunt dev
     
 To build and run a server from production folder `app`:
-    > grunt prod
     
+    > grunt prod
+
 To run tests:
+    
     > grunt test
 
 Publish to gh-pages
