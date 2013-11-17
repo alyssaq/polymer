@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-  grunt.registerTask('server', [
+  grunt.registerTask('dev', [
     'clean:server',
     'compass:server',
     'connect:livereload',

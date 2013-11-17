@@ -2,6 +2,7 @@
   "name": "polymer",
   "version": "0.0.1",
   "dependencies": {},
+  "description": "Polymer blog",
   "author:" : {
     "name": "Alyssa Quek"
   },
@@ -30,8 +31,12 @@
   "engines": {
     "node": ">=0.8.0"
   },
+   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alyssaq/polymer/"
+    "url": "https://github.com/alyssaq/polymer"
+  },
+  "bugs": {
+    "url": "https://github.com/alyssaq/polymer/issues"
   }
 }

@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
   grunt.registerTask('prod', [
     'build',
-    'connect:production:keepalive',
-    'open'
+    'open',
+    'connect:production:keepalive'
   ]);
 };
 
