@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     configPath: 'grunt/modules',
     init: true,
     config: {
+      //pkg: grunt.file.readJSON('package.json'),
       base: grunt.option('base') || process.cwd(),
       source: 'src',
       production: 'app',
@@ -14,6 +15,5 @@ module.exports = function (grunt) {
       livereloadPort: 35729
     }
   });
-
   grunt.loadTasks('grunt/tasks');
 };

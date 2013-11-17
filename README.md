@@ -8,6 +8,13 @@ https://alyssaq.github.io/polymer
 
 Usage
 ==
+To start, clone the repo and download dependencies.    
+Prerequisites to be installed: [nodejs](www.nodejs.org), [gruntjs](www.gruntjs.com)
+
+    > git clone https://github.com/alyssaq/polymer.git
+    > npm install
+    > bower install
+
 To build the project, which creates the `app` folder:
     
     > grunt build
