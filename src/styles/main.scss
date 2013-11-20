@@ -5,6 +5,10 @@
 //     margin: 50px auto 0 auto;
 //     width: 300px;
 // }
+blog-element:unresolved, post-element:unresolved {
+  opacity: 0;
+}
+
 body { @extend .container }
 
 body {

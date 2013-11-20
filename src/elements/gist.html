@@ -1,0 +1,34 @@
+
+<polymer-element name="gist-element"  attributes="gist selected">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+    </style>
+
+    <div>
+      <template if="{{gist.id === selected}}">
+        <h2>
+          <a href="#{{gist.id}}">
+            {{gist.id}}
+          </a>
+        </h2>
+      </template>
+    </div>
+  </template>
+  <script>
+    
+    Polymer('gist-element', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      created: function() { 
+         
+      },
+      enteredView: function() {
+        var files = this.gist.files;
+        console.log(this.gist.files); 
+      },
+      leftView: function() { },
+      attributeChanged: function(attrName, oldVal, newVal) { }
+    });
+  </script>
+</polymer-element>
