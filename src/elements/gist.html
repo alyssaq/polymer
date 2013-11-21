@@ -8,15 +8,15 @@
     <div>
       <template if="{{gist.id === selected}}">
         <h2>
-          <a href="#{{gist.id}}">
-            {{gist.id}}
+          <template id="gist-content" repeat="{{file in files}}">
+            {{file}}
+           </template> 
           </a>
         </h2>
       </template>
     </div>
   </template>
   <script>
-    
     Polymer('gist-element', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
@@ -24,8 +24,19 @@
          
       },
       enteredView: function() {
-        var files = this.gist.files;
-        console.log(this.gist.files); 
+    //    document.addEventListener('DOMContentLoaded', function() {
+          var t = document.getElementById('gist-content');
+          var files = this.gist.files;
+
+          t = {model : {files: []}};
+          for (var key in files) {
+            if (files.hasOwnProperty(key)) {
+              console.log(files[key].raw_url);
+              t.model.files.push(files[key].raw_url);
+            }
+          }
+          Platform.performMicrotaskCheckpoint();
+      //  });
       },
       leftView: function() { },
       attributeChanged: function(attrName, oldVal, newVal) { }
