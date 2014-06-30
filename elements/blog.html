@@ -1,12 +1,19 @@
 <link rel="import" href="post.html">
+<link rel="import" href="gist.html">
+<link rel="import" href="vendor/polymer-ajax/polymer-ajax.html">
 <link rel="import" href="vendor/polymer-jsonp/polymer-jsonp.html">
 <link rel="import" href="vendor/flatiron-director/flatiron-director.html">
+
 
 <polymer-element name="blog-element"  attributes="">
   <template>
     <style>
       /* Shadow DOM css. @host select's the ShadowRoot's host element */
       @host { :scope {display: block;} }
+      a {
+        color: #63c0f5;
+        text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+      }
     </style>
     <div class="row">
       <flatiron-director route="{{route}}" autoHash></flatiron-director>
@@ -18,24 +25,39 @@
         <template repeat="{{post in posts.feed.entry}}">
           <li><a href="#{{post.gsx$slug.$t}}">{{post.gsx$title.$t}}</a></li>
         </template>
+       <!--  <template repeat="{{gist in gists}}">
+          <li><a href="#{{gist.id}}">{{gist.description}}</a></li>
+        </template> -->
       </ul>
 
       <!-- Post content -->
       <template repeat="{{post in posts.feed.entry}}">
         <post-element post="{{post}}" selected="{{route}}"></post-element>
       </template>
+
+      <!-- Post gists -->
+      <!-- <template repeat="{{gist in gists}}">
+        <gist-element gist="{{gist}}" selected="{{route}}"></gist-element>
+      </template> -->
+
     </div>
 
+    <!-- Get Google spreadsheet JSON -->
     <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/0AsQEf9E6NoVcdEtYaklnMU5haUJlajVyVlRvUm9zNUE/od6/public/values?alt=json-in-script&callback=" response="{{posts}}"></polymer-jsonp>
+
+    <!-- Get Gists JSON -->
+    <polymer-ajax auto url="https://api.github.com/users/alyssaq/gists"
+      handleAs="json" response="{{gists}}">
+    </polymer-ajax>
   </template>
 
   <script>
     Polymer('blog-element', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
-      created: function() { },
-      enteredView: function() { },
-      leftView: function() { },
+      created: function() {},
+      enteredView: function() {},
+      leftView: function() {},
       attributeChanged: function(attrName, oldVal, newVal) { }
     });
   </script>

@@ -1,0 +1,55 @@
+
+<polymer-element name="gist-element"  attributes="gist selected">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+    </style>
+
+    <div class="col-lg-4">
+      <template if="{{gist.id === selected}}">
+        <h2>
+          HERRO {{gist.id}}
+
+          <template id="gist-files" repeat="{{file in files}}">
+            <!-- Get Gists Content -->
+            <polymer-ajax auto url="{{gist.id}}"
+            handleAs="json" response="{{gist-content}}">
+            </polymer-ajax>
+            {{gist-content}}
+           </template>
+          </a>
+        </h2>
+      </template>
+    </div>
+
+
+
+  </template>
+  <script>
+    Polymer('gist-element', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      created: function() {
+
+      },
+      enteredView: function() {
+    //    document.addEventListener('DOMContentLoaded', function() {
+      console.log('hi')
+          var t = document.getElementById('gist-content');
+          var files = this.gist.files;
+
+          t = {model : {files: []}};
+          for (var key in files) {
+            if (files.hasOwnProperty(key)) {
+              console.log(files[key].raw_url);
+              t.model.files.push(files[key].raw_url);
+            }
+          }
+          Platform.performMicrotaskCheckpoint();
+      //  });
+      },
+      leftView: function() { },
+      attributeChanged: function(attrName, oldVal, newVal) { }
+    });
+  </script>
+</polymer-element>

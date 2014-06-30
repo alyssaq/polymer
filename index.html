@@ -3,36 +3,39 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/main.css">
-        <script src="scripts/vendor/modernizr.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/modernizr.js"></script>
 
-        <!-- Place your HTML imports here -->
-        <link rel="import" href="elements/blog.html">
-    </head>
-    <body>
-      <header>
-       <h1>Welcome to Alyssa's polymer blog!</h1>
-        <h2>Data is served from a 
-        <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0AsQEf9E6NoVcdEtYaklnMU5haUJlajVyVlRvUm9zNUE#gid=0">google spreadsheet </a>
-        </h2>
-      </header>
-      <main>
-        <blog-element></blog-element>
-      </main>
+  <!-- Place your HTML imports here -->
+  <link rel="import" href="elements/blog.html">
+</head>
+<body>
+  <header>
+   <h1>Welcome to Alyssa's polymer blog!</h1>
+    <h2>Data is served from a
+    <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0AsQEf9E6NoVcdEtYaklnMU5haUJlajVyVlRvUm9zNUE#gid=0">google spreadsheet </a>
+    </h2>
+  </header>
+  <main>
+    <blog-element></blog-element>
+  </main>
 
-      <script>
-        document.addEventListener('WebComponentsReady', function() {
-            // Perform some behaviour
-        });
-      </script>
+  <script>
+    // hide body to prevent FOUC
+    document.body.style.opacity = 0;
+    window.addEventListener('WebComponentsReady', function() {
+    // show body now that everything is ready
+    document.body.style.opacity = 1;
+    });
+  </script>
 
-        <script src="scripts/vendor.js"></script>
+  <script src="scripts/vendor.js"></script>
 </body>
 </html>
