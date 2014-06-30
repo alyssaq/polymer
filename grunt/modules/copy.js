@@ -8,7 +8,6 @@ module.exports = {
       src: [
         '*.{ico,txt}',
         'elements/**',
-        'lib-elements/**',
         'images/{,*/}*.{webp,gif}'
       ]
     }]

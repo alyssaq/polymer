@@ -10,6 +10,10 @@
     <style>
       /* Shadow DOM css. @host select's the ShadowRoot's host element */
       @host { :scope {display: block;} }
+      a {
+        color: #63c0f5;
+        text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+      }
     </style>
     <div class="row">
       <flatiron-director route="{{route}}" autoHash></flatiron-director>
@@ -21,9 +25,9 @@
         <template repeat="{{post in posts.feed.entry}}">
           <li><a href="#{{post.gsx$slug.$t}}">{{post.gsx$title.$t}}</a></li>
         </template>
-        <template repeat="{{gist in gists}}">
-          <li><a href="#{{gist.id}}">{{gist.id}}</a></li>
-        </template>
+       <!--  <template repeat="{{gist in gists}}">
+          <li><a href="#{{gist.id}}">{{gist.description}}</a></li>
+        </template> -->
       </ul>
 
       <!-- Post content -->
@@ -32,9 +36,9 @@
       </template>
 
       <!-- Post gists -->
-      <template repeat="{{gist in gists}}">
+      <!-- <template repeat="{{gist in gists}}">
         <gist-element gist="{{gist}}" selected="{{route}}"></gist-element>
-      </template>
+      </template> -->
 
     </div>
 
@@ -42,7 +46,7 @@
     <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/0AsQEf9E6NoVcdEtYaklnMU5haUJlajVyVlRvUm9zNUE/od6/public/values?alt=json-in-script&callback=" response="{{posts}}"></polymer-jsonp>
 
     <!-- Get Gists JSON -->
-    <polymer-ajax auto url="https://api.github.com/users/alyssaq/gists" 
+    <polymer-ajax auto url="https://api.github.com/users/alyssaq/gists"
       handleAs="json" response="{{gists}}">
     </polymer-ajax>
   </template>
@@ -51,9 +55,9 @@
     Polymer('blog-element', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
-      created: function() { },
-      enteredView: function() { },
-      leftView: function() { },
+      created: function() {},
+      enteredView: function() {},
+      leftView: function() {},
       attributeChanged: function(attrName, oldVal, newVal) { }
     });
   </script>

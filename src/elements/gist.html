@@ -5,26 +5,36 @@
       @host { :scope {display: block;} }
     </style>
 
-    <div>
+    <div class="col-lg-4">
       <template if="{{gist.id === selected}}">
         <h2>
-          <template id="gist-content" repeat="{{file in files}}">
-            {{file}}
-           </template> 
+          HERRO {{gist.id}}
+
+          <template id="gist-files" repeat="{{file in files}}">
+            <!-- Get Gists Content -->
+            <polymer-ajax auto url="{{gist.id}}"
+            handleAs="json" response="{{gist-content}}">
+            </polymer-ajax>
+            {{gist-content}}
+           </template>
           </a>
         </h2>
       </template>
     </div>
+
+
+
   </template>
   <script>
     Polymer('gist-element', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
-      created: function() { 
-         
+      created: function() {
+
       },
       enteredView: function() {
     //    document.addEventListener('DOMContentLoaded', function() {
+      console.log('hi')
           var t = document.getElementById('gist-content');
           var files = this.gist.files;
 
